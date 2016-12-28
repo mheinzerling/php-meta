@@ -1,0 +1,27 @@
+{
+  "name": "mheinzerling/meta",
+  "description": "Handle PHP language constructs (Class/Namespace) and generate PHP files.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Heinzerling",
+      "email": "webmaster@mheinzerling.de"
+    }
+  ],
+  "require": {
+    "php": "^7.1.0",
+    "mheinzerling/fileutils": "dev-master",
+    "mheinzerling/stringutils": "dev-master",
+    "eloquent/enumeration": "^5.1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6.0",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "mheinzerling\\meta\\": "src/"
+    }
+  }
+}
