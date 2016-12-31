@@ -20,7 +20,6 @@ abstract class PHPType
         $this->optional = $optional;
     }
 
-
     public abstract function toOptional(): PHPType;
 
 }

@@ -50,7 +50,10 @@ class AClass
 
     public function import(): string
     {
-        return $this->getNamespace()->qualified() . ANamespace::DELIMITER . $this->simpleName;
+        if ($this->namespace->isRoot())
+            return $this->simpleName;
+        else
+            return $this->getNamespace()->qualified() . ANamespace::DELIMITER . $this->simpleName;
     }
 
     public function fullyQualified(): string

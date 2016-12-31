@@ -13,7 +13,7 @@ class TypeConverter
     public static function getterPrefix(PHPType $type): string
     {
         if ($type instanceof PrimitivePHPType && $type->isBool()) return "is";
-        elseif ($type instanceof PrimitivePHPType || $type instanceof ClassPHPType) return 'get';
+        if ($type instanceof PrimitivePHPType || $type instanceof ClassPHPType) return 'get';
         throw new \Exception("Unhandled type " . get_class($type));
     }
 
@@ -22,7 +22,7 @@ class TypeConverter
         $result = "";
         if ($type instanceof PrimitivePHPType) {
             $result .= $type->getToken();//TODO array of Object
-        } elseif ($type instanceof ClassPHPType) {
+        } else if ($type instanceof ClassPHPType) {
             $result .= $classWriter->print($type->getClass());
         } else {
             throw new \Exception("Unhandled type " . get_class($type));
@@ -37,7 +37,7 @@ class TypeConverter
         if ($type->isOptional()) $result .= "?";
         if ($type instanceof PrimitivePHPType) {
             $result .= $type->getToken();
-        } elseif ($type instanceof ClassPHPType) {
+        } else if ($type instanceof ClassPHPType) {
             $result .= $classWriter->print($type->getClass());
         } else {
             throw new \Exception("Unhandled type " . get_class($type));
@@ -48,15 +48,15 @@ class TypeConverter
     public static function toValue(PHPType $type, $value): string
     {
         if ($type instanceof PrimitivePHPType) {
-            if ($value == null) return 'null';
-            else if ($type->isInt()) return $value;
-            elseif ($type->isBool()) return (empty($value)) ? "false" : "true";
+            if ($value === null) return 'null';
+            if ($type->isInt()) return (string)$value;
+            if ($type->isBool()) return (empty($value)) ? "false" : "true";
             return "'" . $value . "'";
-        } elseif ($type instanceof ClassPHPType) {
-            if ($value == null) return 'null';
-            throw new \Exception("Unsupported for objects " . $type->getClass()->fullyQualified());
-        } else {
-            throw new \Exception("Unhandled type " . get_class($type));
         }
+        if ($type instanceof ClassPHPType) {
+            if ($value === null) return 'null';
+            throw new \Exception("Unsupported for objects " . $type->getClass()->fullyQualified());
+        }
+        throw new \Exception("Unhandled type " . get_class($type));
     }
 }

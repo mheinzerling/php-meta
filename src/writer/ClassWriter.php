@@ -98,7 +98,9 @@ class ClassWriter
         $result .= $this->line($definition);
         $result .= $this->line("{");
         foreach ($this->constants as $name => $value) {
-            if (is_numeric($value)) $result .= $this->line("    const $name = $value;"); //TODO
+            if (is_numeric($value)) $result .= $this->line("    const $name = $value;");
+            else if (is_bool($value)) $result .= $this->line("    const $name = " . ($value ? "true" : "false") . ";");
+            //TODO array
             else $result .= $this->line("    const $name = '$value';");
         }
 
@@ -140,7 +142,7 @@ class ClassWriter
 
     public function doc(string $line): ClassWriter
     {
-        $this->doc .= $this->line(" * " . $line);
+        $this->doc .= $this->line(rtrim(" * " . $line));
         return $this;
     }
 

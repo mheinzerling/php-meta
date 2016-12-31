@@ -143,15 +143,14 @@ class MethodWriter
         return $this;
     }
 
-    public function use (AClass $class): MethodWriter
-    {
-        $this->classWriter->use($class);
-        return $this;
-    }
-
     public function getClassWriter(): ClassWriter
     {
         return $this->classWriter;
+    }
+
+    public function method($name): MethodWriter
+    {
+        return $this->classWriter->method($name);
     }
 
     public function static (bool $static = true): MethodWriter

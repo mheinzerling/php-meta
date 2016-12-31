@@ -98,8 +98,26 @@ class FieldWriter
         return $this->type(new ClassPHPType($class));
     }
 
-    public function initial($initial): void
+    public function initial($initial): FieldWriter
     {
         $this->initial = $initial;
+        return $this;
     }
+
+    public function field(string $name): FieldWriter
+    {
+        return $this->classWriter->field($name);
+    }
+
+    public function method($name): MethodWriter
+    {
+        return $this->classWriter->method($name);
+    }
+
+    public function write(): string
+    {
+        return $this->classWriter->write();
+    }
+
+
 }

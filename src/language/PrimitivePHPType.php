@@ -37,9 +37,15 @@ class PrimitivePHPType extends PHPType
         return $this->type == Primitive::STRING();
     }
 
+    public function isArray(): bool
+    {
+        return $this->type == Primitive::ARRAY();
+    }
+
     public function getToken(): string
     {
         return $this->type->value();
     }
+
 
 }

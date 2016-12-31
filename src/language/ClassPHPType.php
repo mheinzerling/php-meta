@@ -15,6 +15,11 @@ class ClassPHPType extends PHPType
         $this->class = $class;
     }
 
+    /** @noinspection PhpDocSignatureInspection */
+    /**
+     *
+     * @return ClassPHPType
+     */
     public function toOptional(): PHPType
     {
         $type = new ClassPHPType($this->class);
