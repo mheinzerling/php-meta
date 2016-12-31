@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e1cd1843787b3458bb193b299d7c433b",
-    "content-hash": "75ced47e1ecee45be291481f1155cfcd",
+    "hash": "d437997ccc4195f4250cd4f1680d317c",
+    "content-hash": "9d6e344daa83d391b2479c9409be3cd2",
     "packages": [
         {
             "name": "eloquent/enumeration",
@@ -60,21 +60,21 @@
         },
         {
             "name": "mheinzerling/fileutils",
-            "version": "dev-master",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mheinzerling/php-fileutils.git",
-                "reference": "b734a139146ac1b447b49c370342e5e482c13e76"
+                "reference": "c347b5825707e48ba805359ec5f93aa59031bb92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mheinzerling/php-fileutils/zipball/b734a139146ac1b447b49c370342e5e482c13e76",
-                "reference": "b734a139146ac1b447b49c370342e5e482c13e76",
+                "url": "https://api.github.com/repos/mheinzerling/php-fileutils/zipball/c347b5825707e48ba805359ec5f93aa59031bb92",
+                "reference": "c347b5825707e48ba805359ec5f93aa59031bb92",
                 "shasum": ""
             },
             "require": {
                 "eloquent/enumeration": "^5.1.0",
-                "mheinzerling/stringutils": "dev-master",
+                "mheinzerling/stringutils": "^3.0.0",
                 "php": "^7.1.0"
             },
             "require-dev": {
@@ -98,11 +98,11 @@
                 }
             ],
             "description": "File utils",
-            "time": "2016-12-30 16:18:10"
+            "time": "2016-12-30 16:27:00"
         },
         {
             "name": "mheinzerling/stringutils",
-            "version": "dev-master",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mheinzerling/php-stringutils.git",
@@ -2223,8 +2223,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mheinzerling/fileutils": 20,
-        "mheinzerling/stringutils": 20,
         "codeclimate/php-test-reporter": 20
     },
     "prefer-stable": false,

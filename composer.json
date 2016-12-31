@@ -11,8 +11,8 @@
   ],
   "require": {
     "php": "^7.1.0",
-    "mheinzerling/fileutils": "dev-master",
-    "mheinzerling/stringutils": "dev-master",
+    "mheinzerling/fileutils": "^3.0.0",
+    "mheinzerling/stringutils": "^3.0.0",
     "eloquent/enumeration": "^5.1.0"
   },
   "require-dev": {
